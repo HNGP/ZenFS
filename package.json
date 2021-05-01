@@ -1,0 +1,27 @@
+{
+  "name": "voyager",
+  "version": "1.0.0",
+  "description": "A new and universal file manager built for the way you work.",
+  "main": "./bin/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TotalChris/ProjectVoyager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TotalChris/ProjectVoyager/issues"
+  },
+  "homepage": "https://github.com/TotalChris/ProjectVoyager#readme",
+  "dependencies": {
+    "electron": "^4.1.0",
+    "jquery": "^3.5.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^15.2.0"
+  }
+}
