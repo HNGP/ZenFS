@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu } = require('electron')
 function createWindow() {
     let win = new BrowserWindow({ 
         title: 'ZenFS', 
@@ -6,9 +6,8 @@ function createWindow() {
         icon: "./bin/img/app.png", 
         width: 1200, 
         height: 900, 
-        frame: false, 
-        transparent: true, 
-        vibrancy: 'ultra-dark', 
+        opacity: 80,
+        titleBarStyle: 'hiddenInset',
         webPreferences: { experimentalFeatures: true } })
     win.loadFile('./bin/html/main.html')
 }
