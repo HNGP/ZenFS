@@ -13,7 +13,7 @@
             <div id="titlebar">
                 <div id="titleplace">
                     <p>ZenFS Virtual Filesystem</p>
-                </div>    
+                </div> 
             </div>
             <div id="menupanel">
                     <div id="nWPanelButton" class="panelItem" onclick="siftlib.openItems(pathString, Object.entries(document.getElementsByClassName('select')))">
@@ -46,7 +46,7 @@
         <div id="bck_btn" class="topbtn" onclick="goTo(goBack(), 0)"><img src="../img/bck.png"/></div>
         <div id="fwd_btn" class="topbtn" onclick="goTo(goForth(), 0)"><img src="../img/fwd.png"/></div>
         <div id="up_btn" class="topbtn" onclick="goTo(path.parse(pathString).dir, 1)"><img src="../img/up.png"/></div>
-        <input type="text" id="pathbox" onkeydown="textFieldKeyHandler(event)"></input>
+        <input type="text" id="pathbox" onchange="setPath()" onkeydown="textFieldKeyHandler(event)"></input>
         <div id="hm_btn" class="topbtn" onclick="goTo(home, 1)"><img src="../img/hm.png"/></div>
         <div id="rf_btn" class="topbtn" onclick="goTo(document.getElementById('pathbox').value, 0)"><img src="../img/rf.png"/></div>
         <div id="go_btn" class="topbtn" onclick="goTo(document.getElementById('pathbox').value, 1)"><img src="../img/fwd.png"/></div>
@@ -56,5 +56,13 @@
                 </table>
             </div>
         <script src="../js/v2.js"></script>
+        <script>
+            function setPath(){
+                var x= document.getElementById('pathbox').value;
+                    localStorage.setItem("path",x);
+                console.log(x);
+            }
+           
+        </script>
     </body>
 </html>

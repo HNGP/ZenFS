@@ -15,7 +15,6 @@ function createWindow() {
         icon: "./bin/img/app.png", 
         width: 1200, 
         height: 900, 
-        opacity: 80,
         titleBarStyle: 'hiddenInset',
         webPreferences: { experimentalFeatures: true } })
     win.loadFile('./bin/html/main.html')
@@ -34,8 +33,8 @@ function addFolderWindow() {
     let win = new BrowserWindow({ 
         title: 'Add New Folder', 
         nodeIntegration: true, 
-        width: 500, 
-        height: 200, 
+        width: 500,
+        height: 200,
         webPreferences: { experimentalFeatures: true } })
     win.loadFile('./bin/html/newfolder.html')
 }
@@ -71,9 +70,16 @@ const MenuBarItems = [
   {
     label: 'File',
     submenu: [
-      isMac ? { role: 'close' } : { role: 'quit' }
-    ]
-  },
+        isMac ? { role: 'close' } : { role: 'quit' },
+            {label: 'New Window',
+             click: async () => {
+                 await createWindow()}
+            },
+            {label: 'Add Folder',
+              click: async () => {
+                 await addFolderWindow()}
+            }
+    ]},
   // { role: 'editMenu' }
   {
     label: 'Edit',
