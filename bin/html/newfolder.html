@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ZenFS Virtual Filesystem</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sift.css"/>
 </head>
 <body>
-    <h1>LUND</h1>
-    <Form id="folderName" onsubmit="return false">
-        <input id="new-folder-dir" type="text">
-        <button type="submit" onclick="createDir()">OK</button>
-    </Form>
+    <div class="rename">
+        <h2 class="headren">Enter The New Folder Name:</h2>
+        <Form id="folderName" onsubmit="return false">
+            <input id="new-folder-dir" type="text" class="btn neu-components">
+            <button type="submit" onclick="createDir()" class="btn neu-components">OK</button>
+        </Form>
+    </div>
 </body>
 <script>
-
-
+const { ipcRenderer } = require('electron')
 const fs = require('fs');
-
-function createDir(){ 
+function createDir(){
     const dirName = document.getElementById("new-folder-dir").value;
-    const pathString = '/Users/kdcloudy/Desktop'
+    // var newPath = ipcRenderer.sendSync('Path', '')
+    const pathString = localStorage.getItem("newpath");
     fs.mkdir(pathString + '/' + dirName, { recursive: true }, (err) => {
         if (err) throw err;
     })
 }
 </script>
+<script src="../js/v2.js"></script>
 </html>

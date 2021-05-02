@@ -224,6 +224,7 @@ function goTo(newPathString, navflag) { //NO-jquery
                 }
                 ;
                 $('#pathbox').val(newPathString);
+                localStorage.setItem("newpath", newPathString);
                 $('#content-box-holder').scrollTop(0);
                 if (pathString !== newPathString) { //if we have a new path rendered
                     if (navflag == 1) { //and we want a history entry
@@ -244,4 +245,9 @@ function goTo(newPathString, navflag) { //NO-jquery
             }
         }
     });
+    ipcMain.on('Path', (event, arg) => {
+        console.log(arg)
+        event.returnValue = newPathString
+      })
 }
+
