@@ -15,6 +15,7 @@ function sift(pathString, navflag) {
     } else { //correct path name if need-be
         return { 'pathString': pathString, 'type': 'folder' };
     }
+    console.log("testpath")
 }
 
 function popCMenu(evt, iscd){
