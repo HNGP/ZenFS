@@ -57,6 +57,9 @@ body {
   height: 35px;
   -webkit-app-region: drag;
 }
+#titlewrapper {
+  -webkit-app-region: drag;
+}
 #content-box-holder {
   height: Calc(100% - 70px);
   overflow-y: scroll;
@@ -99,10 +102,13 @@ body {
 #renbox {
   font-size: 16px;
   border: 0px;
-  width: -webkit-fill-available;
+  width: 80%;
+  border-radius: 20px;
+  box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5);
   font-family: "Roboto", sans-serif;
   color: var(--invert);
-  outline: none;
+  /* outline: none; */
 }
 .disable {
   color: var(--invert-dis) !important;
@@ -113,6 +119,7 @@ body {
 #pathbox {
   background-color: var(--primary);
   padding-left: 8px;
+  z-index: 2;
 }
 #renbox {
   background-color: rgba(0, 0, 0, 0);
@@ -121,9 +128,18 @@ body {
 /* .itemlist tr:nth-child(odd){
     background-color: var(--secondary);
   } */
+
+.itemRow:hover {
+  box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5);
+  /* transform: scale(1.1, 1.1); */
+  z-index: 2;
+  transform: translateY(-2, -2);
+}
 .itemlist.hover-enabled tr div:hover,
 .select {
-  background-color: var(--trietary);
+  /* background-color: var(--trietary); */
+
   cursor: pointer;
 }
 .select {
@@ -152,6 +168,7 @@ body {
 .itemRow {
   width: -webkit-fill-available;
   padding: 8px;
+  transition: 0.9s;
 }
 .itemNameText {
   padding: 0px;
