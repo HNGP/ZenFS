@@ -9,17 +9,25 @@ const { create } = require('domain');
 var pathString = home;
 
 function createWindow() {
-    let win = new BrowserWindow({ 
-        title: 'ZenFS', 
-        nodeIntegration: true, 
-        icon: "./bin/img/app.png", 
-        width: 1200, 
-        height: 900, 
+    let win = new BrowserWindow({
+        title: 'ZenFS',
+        nodeIntegration: true,
+        icon: "./bin/img/app.png",
+        width: 1200,
+        height: 900,
         titleBarStyle: 'hiddenInset',
-        webPreferences: { experimentalFeatures: true } })
-    win.loadFile('./bin/html/main.html')
+      webPreferences: { experimentalFeatures: true }
+    })
+  if (process.platform === 'darwin') {
+    win.loadFile('./bin/html/mainmac.html')
     const menu = Menu.buildFromTemplate(MenuBarItems)
     Menu.setApplicationMenu(menu)
+  }
+  else {
+    win.loadFile('./bin/html/mainwin.html')
+    const menu = Menu.buildFromTemplate(MenuBarItems)
+    Menu.setApplicationMenu(menu)
+  }
 }
 app.on('ready', createWindow)
 
@@ -56,7 +64,7 @@ const MenuBarItems = [
            await addFolderWindow()}
       },
       {label: 'Toggle Voice',
-          type : "checkbox"  
+          type : "checkbox"
       },
       { type: 'separator' },
       { role: 'services' },
