@@ -55,6 +55,9 @@ const MenuBarItems = [
         click: async () => {
            await addFolderWindow()}
       },
+      {label: 'Toggle Voice',
+          type : "checkbox"  
+      },
       { type: 'separator' },
       { role: 'services' },
       { type: 'separator' },
@@ -78,7 +81,10 @@ const MenuBarItems = [
             {label: 'Add Folder',
               click: async () => {
                  await addFolderWindow()}
-            }
+            },
+            {label: 'Toggle Voice',
+                type : "checkbox"
+            },
     ]},
   // { role: 'editMenu' }
   {
