@@ -27,13 +27,9 @@ function init(){
     setTheme();
     goTo((remote.process.argv[2] != null ? remote.process.argv[2] : home), 1);
 }
-// function setTheme(){
-//     JBody.toggleClass('dark', 'light')
-//     $('#themeswitch div.panelItemSubject img').attr('src', () => {
-//         return '../img/' + (JBody.hasClass('dark') ? 'lgt' : 'drk') + '.png'
-//     });
-//     $('#themeswitch div.panelItemText').html((JBody.hasClass('dark') ? 'Light' : 'Dark') + ' Mode')
-// }
+function setTheme(){
+    JBody.toggleClass('light')
+}
 
 //Window resizing handlers
 
@@ -234,10 +230,6 @@ function goTo(newPathString, navflag) { //NO-jquery
                         hindex++ //increase the history index by 1
                         hist[hindex] = newPathString; //make an entry where we are
                     }                           //also...
-                    //fs.unwatchFile(pathString); //unwatch all the old paths
-                    //fs.watch(newPathString, () => { //watch the new directory
-                        //goTo(pathString); //refresh if we detect anything
-                    //});
                     pathString = newPathString;
                 }
             } else {
@@ -250,5 +242,6 @@ function goTo(newPathString, navflag) { //NO-jquery
         event.returnValue = newPathString
       })
 }
+
 
 

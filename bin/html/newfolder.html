@@ -26,6 +26,7 @@ function createDir(){
     const pathString = localStorage.getItem("newpath");
     fs.mkdir(pathString + '/' + dirName, { recursive: true }, (err) => {
         if (err) throw err;
+        responsiveVoice.speak("New Folder Created");
     })
 }
 </script>
