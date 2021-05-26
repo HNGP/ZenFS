@@ -26,10 +26,16 @@
         <div id="go_btn" class="topbtn" onclick="goTo(document.getElementById('pathbox').value, 1)"><img src="../img/fwd.png" onmouseover="responsiveVoice.speak('Go')"/></div>
         </div>
         <br><br>
-        <div>
+        <div style="margin-top: -30px;">
+            <button class="btn-header" style="font-weight: 600;">
+                <img src="../img/hdd.png" width="20px" style="padding-right: 5px; margin-bottom: -3px;"> </img>
+                External Storages: 
+            </button>
             <button onclick="goTo('/', 1)" onmouseover="responsiveVoice.speak('Macintosh HD')" class="btn">Macintosh HD</button>
-            <button onclick="goTo('/Volumes/T5', 1)" onmouseover="responsiveVoice.speak('Samsung T5')" class="btn">Samsung T5</button>
-            <button onclick="goTo('G:/', 1)" onmouseover="responsiveVoice.speak('Google Drive')" class="btn">Google Drive</button>
+            <button onclick="goTo('/Volumes/T5', 1)" onmouseover="responsiveVoice.speak('Samsung T5 SSD')" class="btn">Samsung T5</button>
+            <button onclick="goTo('/Volumes/WD Passport', 1)" onmouseover="responsiveVoice.speak('WD Passport')" class="btn">WD Passport 1TB</button>
+            <button onclick="goTo('/Volumes/GoogleDrive', 1)" onmouseover="responsiveVoice.speak('Google Drive')"
+                class="btn">Google Drive</button>
         </div>
             <div id="content-box-holder">
                 <table class="itemlist hover-enabled" id="filelist" onmouseover= "responsiveVoice.speak(document.getElementById('filelist').value)">

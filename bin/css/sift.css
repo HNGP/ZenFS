@@ -275,6 +275,7 @@ body {
 .headren {
   margin-bottom: 14px;
 }
+.btn-header,
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -298,12 +299,20 @@ body {
 .btn:focus,
 .btn:hover {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn.focus,
 .btn:focus {
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  border: 0.5px solid;
+  outline: none;
+  cursor: pointer;
+  color: #379aff;
+  /* box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); */
+}
+
+.btn-header:focus {
+  outline: none;
 }
 /* width */
 ::-webkit-scrollbar {

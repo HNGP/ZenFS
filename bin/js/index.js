@@ -12,7 +12,7 @@ function createWindow() {
     let win = new BrowserWindow({
         title: 'ZenFS',
         nodeIntegration: true,
-        icon: "./bin/img/app.png",
+        icon: "./bin/img/main_app.png",
         width: 1200,
         height: 900,
         titleBarStyle: 'hiddenInset',
@@ -29,6 +29,14 @@ function createWindow() {
     Menu.setApplicationMenu(menu)
   }
 }
+
+app.setAboutPanelOptions({
+  applicationName: "ZenFS", 
+  applicationVersion: "V1",
+  version: "1.0.0",
+  credits: "By Kaustubh Debnath & Sumit Prakash",
+});
+
 app.on('ready', createWindow)
 
 function createNewFolder(pathString) {
@@ -63,8 +71,9 @@ const MenuBarItems = [
         click: async () => {
            await addFolderWindow()}
       },
-      {label: 'Toggle Voice',
-          type : "checkbox"
+      {label: 'Toggle Voice Feedback',
+          type : "checkbox",
+          checked: true,
       },
       { type: 'separator' },
       { role: 'services' },
@@ -90,8 +99,9 @@ const MenuBarItems = [
               click: async () => {
                  await addFolderWindow()}
             },
-            {label: 'Toggle Voice',
-                type : "checkbox"
+            {label: 'Toggle Voice Feedback',
+                type : "checkbox",
+                checked: true,
             },
     ]},
   // { role: 'editMenu' }
