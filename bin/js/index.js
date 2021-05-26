@@ -8,6 +8,9 @@ const remote = require('electron').remote;
 const { create } = require('domain');
 var pathString = home;
 
+const isMac = process.platform === 'darwin'
+
+
 function createWindow() {
     let win = new BrowserWindow({
         title: 'ZenFS',
@@ -30,12 +33,15 @@ function createWindow() {
   }
 }
 
-app.setAboutPanelOptions({
-  applicationName: "ZenFS", 
-  applicationVersion: "V1",
-  version: "1.0.0",
-  credits: "By Kaustubh Debnath & Sumit Prakash",
-});
+if (isMac) {
+  app.setAboutPanelOptions({
+    applicationName: "ZenFS", 
+    applicationVersion: "V1",
+    version: "1.0.0",
+    credits: "By Kaustubh Debnath & Sumit Prakash",
+  });
+}
+
 
 app.on('ready', createWindow)
 
@@ -56,7 +62,6 @@ function addFolderWindow() {
 }
 
 
-const isMac = process.platform === 'darwin'
 
 const MenuBarItems = [
   // { role: 'appMenu' }
