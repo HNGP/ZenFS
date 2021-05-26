@@ -26,7 +26,11 @@
         <div id="go_btn" class="topbtn" onclick="goTo(document.getElementById('pathbox').value, 1)"><img src="../img/fwd.png" onmouseover="responsiveVoice.speak('Go')"/></div>
         </div>
         <br><br>
-        <div>
+        <div style="margin-top: -30px;">
+            <button class="btn-header" style="font-weight: 600;">
+                <img src="../img/hdd.png" width="20px" style="padding-right: 5px; margin-bottom: -3px;"> </img>
+                External Storages: 
+            </button>
             <button onclick="goTo('C:/Users/sumit/', 1)" onmouseover="responsiveVoice.speak('C Drive')" class="btn">C:/</button>
             <button onclick="goTo('D:/', 1)" onmouseover="responsiveVoice.speak('D Drive')" class="btn">D:/</button>
             <button onclick="goTo('G:/', 1)" onmouseover="responsiveVoice.speak('Google Drive')" class="btn">Google Drive</button>
