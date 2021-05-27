@@ -1,6 +1,6 @@
-<h1>ZenFS- A Virtual File Sytem</h1>
+<h1>ZenFS- A Cross Platform File Manager</h1>
 
-<p> ZenFS is a virtual file system built using Electron access your files and folders easily with an accessibility in the form of audio feedback after every task performed and even an audio response over all the UI Elements.</p>
+<p> ZenFS is a virtual filesystem built using Electron access your files and folders easily with an accessibility in the form of audio feedback after every task performed and even an audio response over all the UI Elements.</p>
 
 <h3> Get Started! </h3>
 
